@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f7fb" />
+    <title>我的待办清单</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app" aria-labelledby="page-title">
+      <header class="app-header">
+        <span class="eyebrow">VANILLA JAVASCRIPT DEMO</span>
+        <h1 id="page-title">我的待办清单</h1>
+        <p>把今天要做的事记下来，一件一件完成。</p>
+      </header>
+
+      <section class="card" aria-label="待办事项">
+        <form id="todo-form" class="todo-form">
+          <label class="sr-only" for="todo-input">新增待办事项</label>
+          <input id="todo-input" type="text" placeholder="例如：复习 JavaScript 基础" maxlength="100" autocomplete="off" required />
+          <button type="submit">添加事项</button>
+        </form>
+
+        <div class="toolbar">
+          <p id="remaining-count" aria-live="polite">0 项待完成</p>
+          <div class="filters" role="group" aria-label="筛选待办事项">
+            <button class="filter active" type="button" data-filter="all" aria-pressed="true">全部</button>
+            <button class="filter" type="button" data-filter="active" aria-pressed="false">未完成</button>
+            <button class="filter" type="button" data-filter="completed" aria-pressed="false">已完成</button>
+          </div>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-label="待办列表"></ul>
+        <p id="empty-state" class="empty-state">还没有待办事项，先添加一件吧。</p>
+      </section>
+
+      <p class="footnote">事项自动保存在当前浏览器中</p>
+    </main>
+  </body>
+</html>
